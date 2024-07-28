@@ -1,6 +1,7 @@
-html{
+html {
     margin: 0;
 }
+
 body {
     display: grid;
     grid-template-columns: auto;
@@ -10,50 +11,60 @@ body {
         "main"
         "footer";
     margin: 0 auto;
-    background-color: #9368B7;
+    background-color: #C589E8;
+    color: #ECFFF8;
+    font-family: "Montserrat", sans-serif;
 }
 
-p {
-    color: white;
-}
 
 /*Nav Bar Start*/
-ul.menu { 
-    grid-area: header; 
+ul.menu {
+    grid-area: header;
     list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
     flex-wrap: nowrap;
+    justify-content: space-around;
     width: 100%;
-    position: fixed;
+    /* position: absolute; */
     top: 0px;
     text-align: center;
     z-index: 1;
 }
+
 ul.menu ul {
-    display:none;
+    display: none;
 }
+
 .menu a {
     display: block;
-    background: #E5DCD0;
+    background: #E3DAFF;
     padding: 10px;
-    color: #874937;
     text-decoration: none;
     transition: transform 0.1s ease-in, background-color 0.5s linear;
     flex-basis: auto;
 }
-.menu a:link, .menu a:visited, .menu a:hover, .menu a:focus, .menu a:active{
-    color: #874937;
+
+.menu a:link,
+.menu a:visited,
+.menu a:hover,
+.menu a:focus,
+.menu a:active {
+    color: #7E2E84;
 }
+
 .menu li {
-    width: 25%;
+    width: 100%;
+    border: #7E2E84 solid 2px;
 }
+
 .menu a:hover {
-	background: #874937;
-	color: #E5DCD0;
-    transform:scale(1.1);
+    background: #7E2E84;
+    color: #ECFFF8;
+    transform: scale(1.1);
 }
+
 /*Nav Bar End*/
 
 main {
@@ -73,36 +84,44 @@ header {
     grid-area: header;
 }
 
-#titleGroup{
+#titleGroup {
     grid-area: title;
     display: flex;
     flex-direction: column;
     text-align: center;
 }
 
-#pageTitle{
+h1 {
+    font-family: "Bona Nova SC", serif;
+    font-weight: 800;
     font-size: 72pt;
-    font-family: 'Black Han Sans', sans-serif;
-    color: black;
-    margin-bottom: 0;
+    color: #7E2E84;
+    margin: 0 auto;
 }
 
-#titleSubheading{
-    color:#E5DCD0;
+h2 {
+    font-family: "Bona Nova SC", serif;
+    font-weight: 600;
+    font-size: 36pt;
+    color: black;
+}
+
+h3 {
+    font-family: "Bona Nova SC", serif;
+    font-weight: 400;
+    font-size: 24pt;
+    color: #ECFFF8;
+}
+
+p{
+    font-size: 16pt;
+    color: #ECFFF8;
+}
+
+#titleSubheading {
+    color: #E3DAFF;
     font-size: 24pt;
     margin: 0;
-}
-
-h2{
-    font-weight: 800;
-    font-family: sans-serif;
-    font-size: 30pt;
-    color: black;
-}
-
-h3{
-    color:#E5DCD0;
-    font-size: 24pt;
 }
 
 #aboutMe {
@@ -126,120 +145,93 @@ h3{
     padding: 2em 0;
     display: flex;
     text-align: center;
-    flex-flow: column nowrap;
+    justify-content: space-around;
+    flex-flow: row wrap;
     margin: 0 auto;
 }
 
 .project {
     display: grid;
-    grid-template-columns: 40% auto;
-    grid-template-rows: 20% auto;
-    grid-template-areas: 
-    "projectImage   projectTitle"
-    "projectImage   projectInfo";
+    width: 45%;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+        "projectTitle"
+        "projectImage"
+        "projectInfo";
     margin: 1em;
-    border: 1px solid black;
+    border: 3px solid #7E2E84;
 }
 
-.project img{
+.project img {
     grid-area: projectImage;
-    width: 100%;
+    width: 90%;
     margin: 1em;
+    justify-self: center;
 }
 
-.project h3{
+.project h3 {
     grid-area: projectTitle;
     font-size: 30pt;
 }
 
-.project p,ul{
+.project p,
+ul {
     grid-area: projectInfo;
     margin: 2em 3em;
     text-align: left;
 }
 
-#resume {
-    grid-area: resume;
-    padding: 2em 0;
-    text-align: center;
-}
-
-#resume iframe{
-    width: 100%;
-    height: 800px;
-}
-
 footer {
     grid-area: footer;
     background-color: black;
-    color: #E5DCD0;
+    color: #ECFFF8;
     margin: auto 0;
     padding: 2em;
     text-align: center;
 }
 
-a:link{
-    color: #E5DCD0;
+a:link,
+a:visited {
+    color: #ECFFF8;
 }
 
-a:visited{
-    color: black;
+a:hover,
+a:focus {
+    color: #1AC8ED;
 }
 
-footer a:visited{
-    color: #874937;
+a:active {
+    color: #7E2E84;
 }
 
-a:hover, a:focus{
-    color: #A7A99D;
-}
-
-a:active{
-    color: #CD4637;
-}
-
-@media only screen and (max-width: 850px) {
-    ul.menu{
+@media only screen and (max-width: 1150px) {
+    ul.menu {
         flex-direction: column;
     }
-    .menu li {
-        width: 100%;
-    }
-    #titleGroup{
+
+    #titleGroup {
         text-align: center;
         margin-top: 100px;
     }
+
     #aboutMe {
         flex-direction: column;
         text-align: center;
         padding: 0;
     }
-    #aboutMe img{
+
+    #aboutMe img {
         width: 100%;
         margin-top: 20px;
     }
+
     .pageText {
         padding: 1em 0;
         width: 100%;
     }
 
     .project {
-        grid-template-columns: auto;
-        grid-template-rows: auto auto auto;
-        grid-template-areas: 
-        "projectTitle"
-        "projectImage"
-        "projectInfo";
-        margin: 1em;
-        border: 1px solid black;
-    }
-    .project img{
-        margin: 0;
         width: 90%;
-        justify-self: center;
-    }
-
-    #resume iframe{
-        height: 500px;
     }
 }
